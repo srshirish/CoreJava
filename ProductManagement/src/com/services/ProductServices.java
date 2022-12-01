@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import com.beans.*;
 
-public class ProductServices {
+public class ProductServices implements ProductServicesInterface {
 
 	//As mentioned below, both of the statement are static so as soon as default constructor will get called
 	//we will have a initialized ArrayList wherever we will make its object.
