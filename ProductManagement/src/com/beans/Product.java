@@ -1,6 +1,6 @@
 package com.beans;
 
-public class Product {
+public class Product implements Comparable<Product> {
 	
 	//Data members for "Product" class
 	private int pid;
@@ -50,5 +50,16 @@ public class Product {
 	@Override
 	public String toString() {
 		return "\n"+"Product [pid=" + pid + ", pname=" + pname + ", qty=" + qty + ", price=" + price + "]";
+	}
+
+	//Compare method, implementation of a method from Comparable<Product> interface.
+	@Override
+	public int compareTo(Product o) {
+		if(o.getQty()<this.qty)
+			return 1;
+		else if(o.getQty()==this.qty)
+			return 0;
+		else
+			return -1;
 	}
 }

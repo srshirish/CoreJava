@@ -27,8 +27,8 @@ public class MenuDriven {
 			System.out.println("4"+". "+"Display all product");
 			System.out.println("5"+". "+"Find by ID");
 			System.out.println("6"+". "+"Find by name");
-			//System.out.println("7"+". "+"Sort by quantity");
-			//System.out.println("8"+". "+"Sort by price");
+			System.out.println("7"+". "+"Sort by quantity");
+			System.out.println("8"+". "+"Sort by name");
 			System.out.println("9"+". "+"Modify price");
 			System.out.println("10"+". "+"Exit");
 
@@ -81,6 +81,22 @@ public class MenuDriven {
 				else
 					System.err.println("Product not found...!!!");
 				break;
+				
+			case 7:
+				boolean statusQ=pservices.sortByQuantity();
+				if(statusQ)
+					System.out.println("Sorted the list by Quantity");
+				else
+					System.err.println("Nothing to sort, list is empty...!!!");
+				break;
+				
+			case 8:
+				boolean statusN=pservices.sortByName();
+				if(statusN)
+					System.out.println("Sorted the list by Name");
+				else
+					System.err.println("Nothing to sort, list is empty...!!!");
+				break;
 
 			case 9:
 				System.out.println("Enter the product ID to modify price");
@@ -90,6 +106,7 @@ public class MenuDriven {
 				boolean statusM=pservices.modifyPrice(pidm,price);
 				if(statusM)
 					System.out.println("Price modified successfully...");
+				break;
 
 			case 10:	
 				System.out.println("Thankyou for using...");

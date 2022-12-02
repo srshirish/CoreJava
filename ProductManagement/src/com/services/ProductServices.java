@@ -87,6 +87,22 @@ public class ProductServices implements ProductServicesInterface {
 		plist.remove(pfound);
 		return true;
 	}
-	
-	
+
+	public boolean sortByQuantity() {
+		if(plist!=null) {
+			plist.sort(null);
+			return true;
+		}
+		else
+			return false;
+	}
+
+	public boolean sortByName() {
+		if(plist!=null) {
+			plist.sort(new SortByName());
+			return true;
+		}
+		else
+			return false;
+	}
 }
